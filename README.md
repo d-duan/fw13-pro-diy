@@ -73,7 +73,7 @@ Use the commands below to set both battery & plugged S0 to be Network Disconnect
 powercfg -setacvalueindex scheme_current sub_none connectivityinstandby 0
 powercfg -setdcvalueindex scheme_current sub_none connectivityinstandby 0
 ```
-Since I won't need my device to stay connected to the internet or bluetooth while sleeping (if needed, I can keep the machine awake with MS Powertoys,) Disconnected Standby ensures that no network traffic can wake my computer up, though the LTSC version already promises much, much reduced frequency of Windows fetching for updates. FWIW, AX210's wake on WoWLAN/magic packet/pattern match is also turned off in Device Manager > {the WiFi card} > Properties > Advanced.
+Since I won't need my device to stay connected to the internet or bluetooth while sleeping (if needed, I can keep the machine awake with MS Powertoys,) Disconnected Standby ensures that no network traffic can wake my computer up, though the LTSC version already promises much, much reduced frequency of Windows fetching for updates. FWIW, AX210's wake on WoWLAN/magic packet/pattern match is also turned off in Device Manager > {the WiFi card} > Properties > Advanced. Additionally. MIMO Power Save Mode is set to No SMPS, and U-APSD support is set to Disabled.
 
 Using powercfg /SleepStudy, I can see that my laptop slept like a baby last night, with ~4% battery drain over just a bit over 5 hours, in line with Microsoft's S0 targets:
 
