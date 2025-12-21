@@ -86,6 +86,8 @@ powercfg /setacvalueindex scheme_current sub_none standbybudgetpercent 3
 powercfg /setdcvalueindex scheme_current sub_none standbybudgetpercent 3
 ```
 
+You can always check the power plan configs via `powercfg /SYSTEMPOWERREPORT` or `powercfg /Q`.
+
 ### MS Apps 
 
 IoT LTSC 2024 is a very lean version of Windows 11. However, to bring back some of the enhanced apps from the GAC version, reinstall ms store...
