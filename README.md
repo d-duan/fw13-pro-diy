@@ -1,17 +1,32 @@
-# fw13-ryzen7640-diy
+# fw13-pro-diy
 > [!NOTE]
 > Documentation and notes for my FW13 AMD build.\
-> Last updated: May 2025
+> Repo has been renamed from `fw13-ryzen7640-diy` to `fw13-pro-diy` to reflect the model upgrade \
+> Last updated: Jun 2026 ~~May 2025~~
 
 ## Documentation
 
 ### Components
-- [x] AMD Ryzen 7640u
+- [x] ~~AMD Ryzen 7640u~~
 - [x] Crucial DDR5 5600MHz SODIMM CT2K16G56C46S5, 2x16 GB
 - [x] SK hynix Gold P31, 2TB
 - [x] Additional AX210 WiFi card (reported sleep battery drain [here](https://community.frame.work/t/framework-13-amd-ryzen-ai-sleep-battery-drain-with-intel-ax210-wifi/68959), ~~further testing needed~~ scroll down to see my own testings)
-- [x] General upgrades: 4kg hinge set, 61W battery, and the new 2.8k matte display kit
+- [x] 4kg hinge set
+- [x] ~~61W battery~~
+- [x] 2.8k matte display kit
 - [x] 40x80mm of Honeywell PTM7950 via aliexpress
+
+> 2026 updated components
+- [x] AMD Ryzen AI 9 HX 370
+- [ ] 74Wh Battery
+- [ ] FW13 Pro Bottom Cover
+- [ ] FW13 Pro Input Cover
+      
+The reasons I went for HX370 are:
+1. more predictable platform for complex audio DSP, and more Linus friendly.
+2. uniform threads as opposed to Intel's hybrid = less like to experience audio dropouts/dpc latency spikes when bitwig/vcv tries to distribute multiple serial compute across multiple threads but has to fight the thread director in deciding P-core or E-core.
+3. X7 358H's theoretically lower TDP (25W) and upper PL2 (80W) means very little to _sustained_, portable audio work. A spiked 80W 358H will need to come back down to ~30/45W for continuous work bc it will hit the 100C ceiling inside fw13 chassis and hard throttle.
+4. panther lake's supposed power efficiency is very appealing, plus the arc iGPU. but i am already on AMD and the thought of wiping the system to install fresh windows + intel drivers made me sigh...
 
 ### Assembly
 First up, I'm going to replace the stock liquid metal with Honeywell, following a detailed write-up from [Michael Wu](https://community.frame.work/t/honeywell-ptm7950-phase-change-thermal-pads-sheets-application-tips-and-results/20245) via FW forum.\
@@ -36,7 +51,7 @@ AX210's WIFI 6E and BT drivers downloaded via Intel's official site.
 Follow FW's official [guide](https://guides.frame.work/Guide/Windows+11+Installation+on+the+Framework+Laptop+13+(AMD+Ryzen%E2%84%A2+Series)/214) and make a bootable usb with the LTSC image using Rufus to bypass the network requirement (AMD build specific).\
 Refer to [this thread](https://community.frame.work/t/solved-usb-audio-problems-with-framework-16/60636) for a potential audio issue & fix.
 
-Also, MAS' guide points to [this de-telemetry guide](https://gist.github.com/ave9858/a2153957afb053f7d0e7ffdd6c3dcb89) by ave9858. Further debloating could be needed but I will leave it for now. Running LTSC is already without most of the annoying MS features.\
+Also, MAS' guide points to [this de-telemetry guide](https://gist.github.com/ave9858/a2153957afb053f7d0e7ffdd6c3dcb89) by ave9858. Further debloating could be needed but I will leave it for now. Running LTSC is already without most of the annoying MS features.
 
 Lastly, consider updating the Windows Color Management with [Notebookcheck's calibration](https://www.notebookcheck.net/Framework-Laptop-13-5-Core-Ultra-7-review-New-2-8K-120-Hz-display-with-Arc-8-graphics.874187.0.html) and get the most out of your 2.8k matte display. Their .icm file can be found in their colour testing section. Note that if you are still using their older glossy display, Notebookcheck also has a colour profile download via their review of the Ryzen model.
 
