@@ -21,12 +21,16 @@
 - [ ] 74Wh Battery
 - [ ] FW13 Pro Bottom Cover
 - [ ] FW13 Pro Input Cover
-      
+
 The reasons I went for HX370 are:
 1. more predictable platform for complex audio DSP, and more Linus friendly.
 2. uniform threads as opposed to Intel's hybrid = less like to experience audio dropouts/dpc latency spikes when bitwig/vcv tries to distribute multiple serial compute across multiple threads but has to fight the thread director in deciding P-core or E-core.
 3. X7 358H's theoretically lower TDP (25W) and upper PL2 (80W) means very little to _sustained_, portable audio work. A spiked 80W 358H will need to come back down to ~30/45W for continuous work bc it will hit the 100C ceiling inside fw13 chassis and hard throttle.
 4. panther lake's supposed power efficiency is very appealing, plus the arc iGPU. but i am already on AMD and the thought of wiping the system to install fresh windows + intel drivers made me sigh...
+
+> [!NOTE]
+> Make sure to use AMD cleanup utility to delete older drivers before installing new ones, even though FW's guide suggests simply installing over the existing ones.
+      
 
 ### Assembly
 First up, I'm going to replace the stock liquid metal with Honeywell, following a detailed write-up from [Michael Wu](https://community.frame.work/t/honeywell-ptm7950-phase-change-thermal-pads-sheets-application-tips-and-results/20245) via FW forum.\
