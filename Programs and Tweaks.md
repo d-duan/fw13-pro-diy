@@ -8,7 +8,7 @@
 #### Workflow Enhancement
 + Everything > file system indexing and search
 + ueil > programs launch, web search, calculator etc.
-+ MS Powertoy
++ MS Powertoy (wake, zoomit etc)
 + ThreeFingerDragOnWindows ([Github](https://github.com/ClementGre/ThreeFingerDragOnWindows)) > bring back three finger drag & select because I prefer it
 + Quick Look ([Github](https://github.com/QL-Win/QuickLook)) > space-bar file preview
 + Ditto > clipboard manager + hotkey clips recall
@@ -19,3 +19,7 @@
 + ExplorerPatcher ([Github](https://github.com/valinet/ExplorerPatcher)) > repositions and styles Win11 taskbar
 + Windhawk
 + Change system UI default font back to [SegoeUI](https://github.com/d-duan/fw13-ryzen7640-diy/blob/main/RestoreSegoeUI.reg) (to avoid helvetica black/wide rendering in chrome)
+
+#### Other Case-specific Utilities
++ LatencyMon > real-time audio latency diagnosis
++ Process Lasso > CPU and scheduling utilty
